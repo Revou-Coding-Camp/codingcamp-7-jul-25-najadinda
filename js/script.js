@@ -35,7 +35,7 @@ function renderTodos() {
       <td class="py-3 px-6">
         ${todo.editing ? `<input type="date" id="editDate${realIndex}" value="${todo.date}" class="border rounded px-2 py-1 w-full">` : (todo.date || '-')}
       </td>
-      <td class="py-3 px-6">${todo.completed ? '✅ Completed' : '⏳ Pending'}</td>
+      <td class="py-3 px-6">${todo.completed ? 'Completed' : 'Pending'}</td>
       <td class="py-3 px-6 space-x-2">
         ${todo.editing ? `
           <button onclick="saveEdit(${realIndex})" class="bg-green-500 hover:bg-green-600 text-white px-2 py-1 rounded">Save</button>
