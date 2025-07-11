@@ -1,11 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>To</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Todo List</title>
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
-<body>
-    
+<body class="bg-gray-100 min-h-screen flex items-center justify-center">
+  <div class="bg-white p-6 rounded-xl shadow-md w-full max-w-3xl">
+    <h1 class="text-3xl font-bold mb-4 text-center">Todo List</h1>
+
+    <div class="flex flex-col md:flex-row md:space-x-4 space-y-2 md:space-y-0 mb-4">
+      <input id="taskInput" type="text" placeholder="Add a todo..." class="flex-1 border indigo-800 rounded px-3 py-2 focus:outline-none">
+      <input id="dateInput" type="date" class="border indigo-800 rounded px-3 py-2 focus:outline-none">
+      <button id="addBtn" class="bg-indigo-800 hover:bg-indigo-900 text-white font-bold px-4 py-2 rounded">+</button>
+    </div>
+
+    <div class="flex justify-end space-x-3 items-center mb-4">
+      <select id="filterSelect" class="appearance-none border border-indigo-800 rounded px-3 py-2">
+        <option value="all">Filter</option>
+        <option value="completed">Completed</option>
+        <option value="pending">Pending</option>
+      </select>
+      <button id="deleteAllBtn" class="bg-indigo-800 hover:bg-indigo-900 text-white font-bold px-4 py-2 rounded">DELETE ALL</button>
+    </div>
+
+    <div class="overflow-x-auto">
+      <table class="min-w-full bg-white">
+        <thead>
+          <tr class="bg-gray-200 text-gray-600 uppercase text-sm leading-normal">
+            <th class="py-3 px-6 text-left">Task</th>
+            <th class="py-3 px-6 text-left">Date</th>
+            <th class="py-3 px-6 text-left">Status</th>
+            <th class="py-3 px-6 text-left">Actions</th>
+          </tr>
+        </thead>
+        <tbody id="todoBody" class="text-gray-600 text-sm font-light">
+          <tr><td colspan="4" class="text-center py-4 text-gray-500">No task found</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <script src="js/script.js"></script>
 </body>
 </html>
